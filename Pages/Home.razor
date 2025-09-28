@@ -1,0 +1,207 @@
+﻿@page "/"
+
+<PageTitle>PerfectDriver - Driving Course Lessons</PageTitle>
+
+<div class="hero-section">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1 class="hero-title">
+                <span class="gradient-text">PerfectDriver</span>
+            </h1>
+            <p class="hero-subtitle">Master the Road with Confidence</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid course-container">
+    <div class="row">
+        <div class="col-12">
+            @foreach (var lesson in courseData)
+            {
+                @if (lesson.IsSectionHeading)
+                {
+                    <div class="section-heading mt-4">
+                        <h2 class="section-title">@lesson.ModuleNumber. @lesson.Name</h2>
+                    </div>
+                }
+                else
+                {
+                    <div class="lesson-item">
+                        <a href="@lesson.Url" class="lesson-card" target="_blank">
+                            <div class="lesson-content">
+                                <div class="lesson-text">
+                                    <h3 class="lesson-title"><strong>@lesson.ModuleNumber.@lesson.LessonNumber</strong> @lesson.Name</h3>
+                                </div>
+                                <div class="lesson-arrow">
+                                    <i class="bi bi-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="lesson-hover-effect"></div>
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    public class LessonItem
+    {
+        public string Name { get; set; } = "";
+        public string Url { get; set; } = "";
+        public bool IsSectionHeading { get; set; }
+        public int ModuleNumber { get; set; }
+        public int LessonNumber { get; set; }
+    }
+
+    private string GetSectionIcon(string sectionName)
+    {
+        return sectionName switch
+        {
+            "Introduction" => "play-circle",
+            "Intermediate" => "gear-wide-connected",
+            "Signs and Hazards" => "exclamation-triangle",
+            "Advanced" => "trophy",
+            "Parking Your Car" => "parking",
+            "Getting Around" => "compass",
+            "Emergencies" => "exclamation-octagon",
+            "Practise Exams" => "clipboard-check",
+            "Traffic Scenarios Exams" => "diagram-3",
+            "Exams" => "award",
+            "Road Rules and Penalties" => "book",
+            _ => "bookmark"
+        };
+    }
+
+    private void ProcessCourseData()
+    {
+        int moduleNumber = 0;
+        int lessonNumber = 0;
+
+        foreach (var lesson in courseData)
+        {
+            if (lesson.IsSectionHeading)
+            {
+                moduleNumber++;
+                lesson.ModuleNumber = moduleNumber;
+                lessonNumber = 0; // Reset lesson counter for new module
+            }
+            else
+            {
+                lessonNumber++;
+                lesson.ModuleNumber = moduleNumber;
+                lesson.LessonNumber = lessonNumber;
+            }
+        }
+    }
+
+    private List<LessonItem> courseData = new List<LessonItem>
+    {
+        new LessonItem { Name = "Introduction", IsSectionHeading = true },
+        new LessonItem { Name = "Perfect Driver", Url = "PerfectDriver/index.html" },
+        new LessonItem { Name = "Your Licence", Url = "YourLicence/index.html" },
+        new LessonItem { Name = "Licence Demerit Points and Fines", Url = "LicenceDemeritPointsandFines/index.html" },
+        new LessonItem { Name = "Young Drivers", Url = "YoungDrivers/index.html" },
+        new LessonItem { Name = "The Car", Url = "TheCar/index.html" },
+        new LessonItem { Name = "Manual Versus Automatic", Url = "ManualVersusAutomatic/index.html" },
+        new LessonItem { Name = "Fuel Variants", Url = "FuelVariants/index.html" },
+        new LessonItem { Name = "The Dashboard", Url = "TheDashboard/index.html" },
+        new LessonItem { Name = "Seatbelts, Airbags and Safety Features", Url = "SeatbeltsAirbagsandSafetyFeatures/index.html" },
+        new LessonItem { Name = "Indicators", Url = "Indicators/index.html" },
+        new LessonItem { Name = "Using Your Horn", Url = "UsingYourHorn/index.html" },
+        new LessonItem { Name = "Using Your Lights", Url = "UsingYourLights/index.html" },
+        new LessonItem { Name = "Windscreen Wipers", Url = "WindscreenWipers/index.html" },
+        new LessonItem { Name = "Statistics", Url = "Statistics/index.html" },
+        new LessonItem { Name = "Getting Ready to Drive", Url = "GettingReadytoDrive/index.html" },
+        new LessonItem { Name = "Your Rights", Url = "YourRights/index.html" },
+        new LessonItem { Name = "Intermediate", IsSectionHeading = true },
+        new LessonItem { Name = "Patience", Url = "Patience/index.html" },
+        new LessonItem { Name = "The Three Second Rule", Url = "TheThreeSecondRule/index.html" },
+        new LessonItem { Name = "Speed Limits", Url = "SpeedLimits/index.html" },
+        new LessonItem { Name = "Stopping Distance", Url = "StoppingDistance/index.html" },
+        new LessonItem { Name = "Reversing", Url = "Reversing/index.html" },
+        new LessonItem { Name = "Lane Markers", Url = "LaneMarkers/index.html" },
+        new LessonItem { Name = "Making Turns", Url = "MakingTurns/index.html" },
+        new LessonItem { Name = "Give Way", Url = "GiveWay/index.html" },
+        new LessonItem { Name = "Stop Signs", Url = "StopSigns/index.html" },
+        new LessonItem { Name = "Traffic Lights", Url = "TrafficLights/index.html" },
+        new LessonItem { Name = "Intersections", Url = "Intersections/index.html" },
+        new LessonItem { Name = "Merging and Changing Lanes", Url = "MergingandChangingLanes/index.html" },
+        new LessonItem { Name = "Pedestrians and Pedestrian Crossings", Url = "PedestriansandPedestrianCrossings/index.html" },
+        new LessonItem { Name = "Buses, Bicycles and Trains", Url = "BusesBicyclesandTrains/index.html" },
+        new LessonItem { Name = "Miscellaneous Traffic Laws", Url = "MiscellaneousTrafficLaws/index.html" },
+        new LessonItem { Name = "Defensive Driving and Driving Tips", Url = "DefensiveDrivingandDrivingTips/index.html" },
+        new LessonItem { Name = "Emergency Vehicles", Url = "EmergencyVehicles/index.html" },
+        new LessonItem { Name = "Signs and Hazards", IsSectionHeading = true },
+        new LessonItem { Name = "Driving Distractions", Url = "DrivingDistractions/index.html" },
+        new LessonItem { Name = "Driver Fatigue", Url = "DriverFatigue/index.html" },
+        new LessonItem { Name = "Drugs and Alcohol", Url = "DrugsandAlcohol/index.html" },
+        new LessonItem { Name = "Highways, Freeways and Tollways", Url = "HighwaysFreewaysandTollways/index.html" },
+        new LessonItem { Name = "Warnings and Hazards", Url = "WarningsandHazards/index.html" },
+        new LessonItem { Name = "Wet Weather Driving", Url = "WetWeatherDriving/index.html" },
+        new LessonItem { Name = "You Are Going the Wrong Way", Url = "YouAreGoingtheWrongWay/index.html" },
+        new LessonItem { Name = "Advanced", IsSectionHeading = true },
+        new LessonItem { Name = "Roundabouts", Url = "Roundabouts/index.html" },
+        new LessonItem { Name = "Transit Lanes", Url = "TransitLanes/index.html" },
+        new LessonItem { Name = "Three Point Turns", Url = "ThreePointTurns/index.html" },
+        new LessonItem { Name = "U-Turns", Url = "UTurns/index.html" },
+        new LessonItem { Name = "Overtaking", Url = "Overtaking/index.html" },
+        new LessonItem { Name = "Traffic Calming Devices", Url = "TrafficCalmingDevices/index.html" },
+        new LessonItem { Name = "Common Accidents", Url = "CommonAccidents/index.html" },
+        new LessonItem { Name = "Accidents and Breakdowns", Url = "AccidentsandBreakdowns/index.html" },
+        new LessonItem { Name = "Towing, Trailers and Caravans", Url = "TowingTrailersandCaravans/index.html" },
+        new LessonItem { Name = "Parking Your Car", IsSectionHeading = true },
+        new LessonItem { Name = "Parking", Url = "Parking/index.html" },
+        new LessonItem { Name = "Parallel Parking", Url = "ParallelParking/index.html" },
+        new LessonItem { Name = "Getting Around", IsSectionHeading = true },
+        new LessonItem { Name = "Satellite Navigation", Url = "SatelliteNavigation/index.html" },
+        new LessonItem { Name = "Street Signs and Numbers", Url = "StreetSignsandNumbers/index.html" },
+        new LessonItem { Name = "Simple Car Maintenance", Url = "SimpleCarMaintenance/index.html" },
+        new LessonItem { Name = "Saving Fuel", Url = "SavingFuel/index.html" },
+        new LessonItem { Name = "Emergencies", IsSectionHeading = true },
+        new LessonItem { Name = "What are You Going to Do?", Url = "WhatareYouGoingtoDo/index.html" },
+        new LessonItem { Name = "Practise Exams", IsSectionHeading = true },
+        new LessonItem { Name = "General Exam #1", Url = "GeneralExam1/index.html" },
+        new LessonItem { Name = "General Exam #2", Url = "GeneralExam2/index.html" },
+        new LessonItem { Name = "General Exam #3", Url = "GeneralExam3/index.html" },
+        new LessonItem { Name = "General Exam #4", Url = "GeneralExam4/index.html" },
+        new LessonItem { Name = "Traffic Scenarios Exams", IsSectionHeading = true },
+        new LessonItem { Name = "Traffic Scenarios Exam 1", Url = "TrafficScenariosExam1/index.html" },
+        new LessonItem { Name = "Traffic Scenarios Exam 2", Url = "TrafficScenariosExam2/index.html" },
+        new LessonItem { Name = "Traffic Scenarios Exam 3", Url = "TrafficScenariosExam3/index.html" },
+        new LessonItem { Name = "Exams", IsSectionHeading = true },
+        new LessonItem { Name = "Accidents Exam", Url = "AccidentsExam/index.html" },
+        new LessonItem { Name = "Dashboard Exam", Url = "DashboardExam/index.html" },
+        new LessonItem { Name = "Defensive Driving Exam", Url = "DefensiveDrivingExam/index.html" },
+        new LessonItem { Name = "Drugs and Alcohol Exam", Url = "DrugsandAlcoholExam/index.html" },
+        new LessonItem { Name = "Give Way Exam", Url = "GiveWayExam/index.html" },
+        new LessonItem { Name = "Lane Markers Exam", Url = "LaneMarkersExam/index.html" },
+        new LessonItem { Name = "Miscellaneous Exam #1", Url = "MiscellaneousExam1/index.html" },
+        new LessonItem { Name = "Miscellaneous Exam #2", Url = "MiscellaneousExam2/index.html" },
+        new LessonItem { Name = "Overtaking Exam", Url = "OvertakingExam/index.html" },
+        new LessonItem { Name = "Parking Exam", Url = "ParkingExam/index.html" },
+        new LessonItem { Name = "Pedestrians Exam", Url = "PedestriansExam/index.html" },
+        new LessonItem { Name = "Reversing Exam", Url = "ReversingExam/index.html" },
+        new LessonItem { Name = "Road Signs Exam", Url = "RoadSignsExam/index.html" },
+        new LessonItem { Name = "Road Signs Exam #2", Url = "RoadSignsExam2/index.html" },
+        new LessonItem { Name = "Roundabouts Exam", Url = "RoundaboutsExam/index.html" },
+        new LessonItem { Name = "Seatbelts and Airbags Exam", Url = "SeatbeltsandAirbagsExam/index.html" },
+        new LessonItem { Name = "Speed Signs Exam", Url = "SpeedSignsExam/index.html" },
+        new LessonItem { Name = "Stop Sign Exam", Url = "StopSignExam/index.html" },
+        new LessonItem { Name = "Stopping Distance Exam", Url = "StoppingDistanceExam/index.html" },
+        new LessonItem { Name = "Traffic Lights Exam", Url = "TrafficLightsExam/index.html" },
+        new LessonItem { Name = "Transit Lane Exam", Url = "TransitLaneExam/index.html" },
+        new LessonItem { Name = "Warnings and Hazards Exam", Url = "WarningsandHazardsExam/index.html" },
+        new LessonItem { Name = "What Are They Doing Wrong?", Url = "WhatAreTheyDoingWrong/index.html" },
+        new LessonItem { Name = "What is Wrong with This Picture?", Url = "WhatisWrongwithThisPicture/index.html" },
+        new LessonItem { Name = "Your Licence, Demerit Points, and Fines Exam", Url = "YourLicenceDemeritPointsandFinesExam/index.html" },
+        new LessonItem { Name = "Road Rules and Penalties", IsSectionHeading = true },
+        new LessonItem { Name = "Road Rules", Url = "RoadRules/index.html" }
+    };
+
+    protected override void OnInitialized()
+    {
+        ProcessCourseData();
+    }
+}

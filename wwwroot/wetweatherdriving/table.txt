@@ -1,0 +1,14 @@
+ usegrid=true bordercolor=#000000 bgcolor=#FFFFFF border=1 height=100% width=100% cellspacing=0 cellpadding=3>
+<TR height=100%>
+<TD align=center valign=middle width=10% bgcolor=#585858><SPAN style='color:#FEFEFE;font-family:Segoe UI;font-size:9pt;'>10 metres</span></TD>
+<TD align=center valign=middle width=10% bgcolor=#585858><SPAN style='color:#FEFEFE;font-family:Segoe UI;font-size:9pt;'>20</span></TD>
+<TD align=center valign=middle width=10% bgcolor=#585858><SPAN style='color:#FEFEFE;font-family:Segoe UI;font-size:9pt;'>30</span></TD>
+<TD align=center valign=middle width=10% bgcolor=#585858><SPAN style='color:#FEFEFE;font-family:Segoe UI;font-size:9pt;'>40</span></TD>
+<TD align=center valign=middle width=10% bgcolor=#585858><SPAN style='color:#FEFEFE;font-family:Segoe UI;font-size:9pt;'>50</span></TD>
+<TD align=center valign=middle width=10% bgcolor=#585858><SPAN style='color:#FEFEFE;font-family:Arial;font-size:8.25pt;'>60</span></TD>
+<TD align=center valign=middle width=10% bgcolor=#585858><SPAN style='color:#FEFEFE;font-family:Arial;font-size:8.25pt;'>70</span></TD>
+<TD align=center valign=middle width=10% bgcolor=#585858><SPAN style='color:#FEFEFE;font-family:Arial;font-size:8.25pt;'>80</span></TD>
+<TD align=center valign=middle width=10% bgcolor=#585858><SPAN style='color:#FEFEFE;font-family:Arial;font-size:8.25pt;'>90</span></TD>
+<TD align=center valign=middle width=10% bgcolor=#585858><SPAN style='color:#FEFEFE;font-family:Arial;font-size:8.25pt;'>100 metres</span></TD>
+</TR>
+

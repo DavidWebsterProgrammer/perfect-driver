@@ -1,0 +1,22 @@
+ usegrid=true bordercolor=#FF0000 bgcolor=#FFFFFF border=4 height=100% width=100% cellspacing=0 cellpadding=3>
+<TR height=18.9683860232945%>
+<TD align=center valign=middle width=12%><SPAN style='color:#000000;font-family:Segoe UI;font-size:15.75pt;'><IMG SRC='arrow.gif'></span></TD>
+<TD valign=middle width=88%><SPAN style='color:#000000;font-family:Segoe UI;font-size:15.75pt;'>Put your car into neutral so that you are still rolling.</span></TD>
+</TR>
+<TR height=19.3011647254576%>
+<TD align=center valign=middle width=12%><SPAN style='color:#000000;font-family:Segoe UI;font-size:15.75pt;'><IMG SRC='arrow.gif'></span></TD>
+<TD valign=middle width=88%><SPAN style='color:#000000;font-family:Segoe UI;font-size:15.75pt;'>Look around, and put on your left blinker. Try to safely pull off the road. Your steering wheel and braking will a lot stiffer and harder to use without power, so be careful. If you remain on the road, however, you will create a traffic hazard for those behind you.</span></TD>
+</TR>
+<TR height=24.459234608985%>
+<TD align=center valign=middle width=12%><SPAN style='color:#000000;font-family:Segoe UI;font-size:15.75pt;'><IMG SRC='arrow.gif'></span></TD>
+<TD valign=middle width=88%><SPAN style='color:#000000;font-family:Segoe UI;font-size:15.75pt;'>Once you've pulled over, check your fuel level. You may have run out of petrol. If so, you will have to contact someone, or find your way to a petrol station to get a container of petrol to bring back to your car. A service station will sell containers designed for this purpose that hold five or so litres of petrol.</span></TD>
+</TR>
+<TR height=18.3028286189684%>
+<TD align=center valign=middle width=12%><SPAN style='color:#000000;font-family:Segoe UI;font-size:15.75pt;'><IMG SRC='arrow.gif'></span></TD>
+<TD valign=middle width=88%><SPAN style='color:#000000;font-family:Segoe UI;font-size:15.75pt;'>If petrol levels seem fine, there must be a mechanical issue with your car. You will need to call for help.</span></TD>
+</TR>
+<TR height=18.9683860232945%>
+<TD align=center valign=middle width=12%><SPAN style='color:#000000;font-family:Segoe UI;font-size:15.75pt;'><IMG SRC='arrow.gif'></span></TD>
+<TD valign=middle width=88%><SPAN style='color:#000000;font-family:Segoe UI;font-size:15.75pt;'>If you are travelling through a sparsely populated area, you should have spare water and a spare container of fuel in your car in preparation. You should also have a phone to call a motoring organization for help, a tow truck for your car, or a friend to come and get you.</span></TD>
+</TR>
+
